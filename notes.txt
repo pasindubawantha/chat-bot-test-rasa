@@ -1,0 +1,21 @@
+Rasa 
+pip3 install rasa
+
+
+Rasa X 
+sudo pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
+
+
+
+spacy
+pip install -U spacy
+python3 -m spacy download en_core_web_md
+python3 -m spacy link en_core_web_md en
+
+
+rasa init
+
+python3 -m spacy download en_core_web_md
+python3 -m spacy link en_core_web_md en
+
+rasa x

@@ -1,0 +1,19 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: "en"
+#pipeline: "pretrained_embeddings_spacy"
+pipeline:
+- name: "SpacyNLP"                    # loads the spacy language model
+- name: "SpacyTokenizer"              # splits the sentence into tokens
+- name: "SpacyFeaturizer"             # transform the sentence into a vector representation
+- name: "RegexFeaturizer"
+- name: "CRFEntityExtractor"
+- name: "EntitySynonymMapper"         # trains the synonyms
+- name: "SklearnIntentClassifier"     # uses the vector representation to classify using SVM
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: KerasPolicy
+  - name: MappingPolicy
